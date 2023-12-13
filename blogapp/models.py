@@ -17,7 +17,7 @@ class Post(models.Model):
     title=models.CharField(max_length=250,blank=False)
     category=models.ForeignKey(Category,related_name='category',on_delete=models.CASCADE,blank=True)
     description=models.TextField()
-    createdAt = models.DateTimeField(auto_now_add=True)
+    createdAt = models.DateTimeField()
 
     class Meta:
         ordering=('createdAt',)
