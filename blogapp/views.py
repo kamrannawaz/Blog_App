@@ -70,7 +70,7 @@ class PostViewSet(ViewSet):
         serializer = PostSerializer(query,many=True)
         return Response(serializer.data,status=status.HTTP_200_OK)
     
-    def get(self,request,pk=None):
+    def retrieve(self,request,pk=None):
         if not pk:
             return Response({"message":"not found!"},status=status.HTTP_404_NOT_FOUND)
         try:
@@ -98,7 +98,7 @@ class PostViewSet(ViewSet):
         except:
             return Response({"message":"not found!"},status=status.HTTP_404_NOT_FOUND)
         
-    def delete(self,request,pk=None):
+    def destroy(self,request,pk=None):
         if not pk:
             return Response({"message":"not found!"},status=status.HTTP_404_NOT_FOUND)
         try:
